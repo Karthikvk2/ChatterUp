@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatterUp - Real-time Chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+</head>
+<body>
+    <div id="onboarding-modal" class="onboarding-modal">
+        <div class="modal-content">
+            <h2>Welcome to ChatterUp! 🚀</h2>
+            <p>Join the conversation and connect with others in real-time</p>
+            <input type="text" id="username-input" placeholder="Enter your name..." maxlength="20">
+            <button onclick="joinChat()">Join Chat</button>
+        </div>
+    </div>
+
+    <div class="container" style="display: none;" id="chat-container">
+        <div class="chat-container">
+            <div class="header">
+                <div class="welcome-message" id="welcome-message">Welcome to ChatterUp!</div>
+            </div>
+            
+            <div class="messages-area" id="messages-area">
+                <!-- Messages will be displayed here -->
+            </div>
+            
+            <div class="input-area">
+                <input type="text" id="message-input" class="message-input" placeholder="Type your message..." maxlength="500">
+                <button onclick="sendMessage()" class="send-btn">Send</button>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="user-count" id="user-count">Connected Users: 0</div>
+            <div class="online-users">
+                <h3>🟢 Online Users</h3>
+                <div id="users-list">
+                    <!-- Online users will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
